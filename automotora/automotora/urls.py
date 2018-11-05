@@ -20,4 +20,5 @@ from django.conf.urls import url
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^automotora/', include('app.urls')),
+    url(r'^automotora/registroauto', include('app.urls'))
 ]
