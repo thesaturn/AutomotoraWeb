@@ -16,9 +16,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
+from app.views import auto_vista_test
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^automotora/', include('app.urls')),
-    url(r'^automotora/registroauto', include('app.urls'))
+    url(r'^automotora/registroauto', include('app.urls')),
+    path('test/', auto_vista_test),
 ]

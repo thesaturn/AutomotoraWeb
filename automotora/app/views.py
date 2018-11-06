@@ -1,5 +1,8 @@
 from django.shortcuts import render, HttpResponse
 
+from .forms import AutoForm
+
+from .models import Auto
 # Create your views here.
 
 def home(request):
@@ -7,3 +10,13 @@ def home(request):
 
 def registro(request):
     return render(request, 'registroauto.html')
+
+def auto_vista_test(request):
+    form = AutoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+
+    context = {
+        'form': form
+    }
+    return render(request, 'registrotest.html', context)

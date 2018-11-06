@@ -13,8 +13,5 @@ class Auto(models.Model):
     precio = models.PositiveIntegerField()
 
     def publish(self):
-        self.publised_date= timezone.now()
+        self.published_date= timezone.now()
         self.save
-
-    def __str__(self):
-        return self.title
