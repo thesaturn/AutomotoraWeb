@@ -15,6 +15,7 @@ def auto_vista_test(request):
     form = AutoForm(request.POST or None)
     if form.is_valid():
         form.save()
+        form = AutoForm()
 
     context = {
         'form': form
