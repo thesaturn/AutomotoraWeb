@@ -21,14 +21,17 @@
 
           <div class="collapse navbar-collapse" id="navbarsExampleDefault">
             <ul class="navbar-nav mr-auto">
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="/home/">Inicio<span class="sr-only">(current)</span></a>
               </li>
-              <li class="nav-item active">
+              <li class="nav-item">
                 <a class="nav-link" href="/registro/">Registro de Vehículos</a>
               </li>
               <li class="nav-item active">
                 <a class="nav-link" href="#">Listado de Vehículos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/contacto/">Contacto</a>
               </li>
             </ul>
           </div>
@@ -37,36 +40,39 @@
         <br>
         <br>
         <br>
-<div class="container">
+<div class="container mx-auto">
 
-  <div class="row">
-    <div class="col">
+  <div class="row mx-auto">
 
-    </div>
-    <div class="col-8">
       {% block content %}
 
       {% for instance in object_list %}
-      <ul class="list-group">
-        <li class="list-group-item"><p class="text-primary font-weight-bold">Marca:</p>{{instance.marca}}</li>
-        <li class="list-group-item"><p class="text-primary font-weight-bold">Modelo:</p>{{instance.modelo}}</li>
-        <li class="list-group-item"><p class="text-primary font-weight-bold">Color:</p>{{instance.color}}</li>
-        <li class="list-group-item"><p class="text-primary font-weight-bold">Año:</p>{{instance.año}}</li>
-        <li class="list-group-item"><p class="text-primary font-weight-bold">Número de Puertas:</p>{{instance.número_Puertas}}</li>
-        <li class="list-group-item"><p class="text-primary font-weight-bold">Precio:</p>${{instance.precio}}</li>
-        <li class="list-group-item"><p class="text-primary font-weight-bold">Descripción:</p>{{instance.descripción}}</li>
-        <li class="list-group-item"><p class="text-primary font-weight-bold">Fecha de Publicación:</p>{{instance.fecha_de_Publicación}}</li>
+      <ul class="list-group mx-auto" style="max-width: 19rem;">
+        <li class="list-group-item text-center"><p class="text-primary text-center font-weight-bold">Marca:</p>{{instance.marca}}</li>
+        <li class="list-group-item text-center"><p class="text-primary text-center font-weight-bold">Modelo:</p>{{instance.modelo}}</li>
+        <li class="list-group-item text-center"><p class="text-primary text-center font-weight-bold">Color:</p>{{instance.color}}</li>
+        <li class="list-group-item text-center"><p class="text-primary text-center font-weight-bold">Año:</p>{{instance.año}}</li>
+        <li class="list-group-item text-center"><p class="text-primary text-center font-weight-bold">Número de Puertas:</p>{{instance.número_Puertas}}</li>
+        <li class="list-group-item text-center"><p class="text-primary text-center font-weight-bold">Precio:</p>${{instance.precio}}</li>
+        <li class="list-group-item text-justify"><p class="text-primary text-center font-weight-bold">Descripción:</p>{{instance.descripción}}</li>
+        <li class="list-group-item text-center"><p class="text-primary text-center font-weight-bold">Fecha de Publicación:</p>{{instance.fecha_de_Publicación}}</li>
         <button type="submit" class="btn btn-primary btn-lg btn-block">Comprar</button>
+        <br>
       </ul>
       <br>
       {% endfor %}
 
       {% endblock%}
-    </div>
-    <div class="col">
 
-    </div>
   </div>
+</div>
+
+<footer class="my-5 pt-5 text-muted text-center text-small">
+  <p class="mb-1">&copy; Vergara's Technologies 2018</p>
+  <ul class="list-inline">
+    <li class="list-inline-item"><a href="/home/">Volver a Home</a></li>
+  </ul>
+</footer>
 </div>
 
 

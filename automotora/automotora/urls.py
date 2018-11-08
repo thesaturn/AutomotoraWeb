@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.conf.urls import url
-from app.views import auto_vista_test, auto_lista
+from app.views import auto_vista_test, auto_lista, contacto
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     url(r'^home/', include('app.urls')),
     path('registro/', auto_vista_test),
     path('lista/', auto_lista),
+    path('contacto/', contacto),
 ]

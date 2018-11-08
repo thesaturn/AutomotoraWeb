@@ -9,6 +9,9 @@ def home(request):
 def registro(request):
     return render(request, 'registroauto.html')
 
+def contacto(request):
+    return render(request, 'contacto.html')
+
 def auto_vista_test(request):
     form = VehiculoForm(request.POST or None)
     if form.is_valid():
