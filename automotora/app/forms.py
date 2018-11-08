@@ -13,5 +13,4 @@ class VehiculoForm(forms.ModelForm):
         'número_Puertas',
         'descripción',
         'precio',
-        'slug'
         ]
