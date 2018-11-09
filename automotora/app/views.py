@@ -4,10 +4,13 @@ from .models import Vehiculo
 # Create your views here.
 
 def home(request):
-    return render(request, 'registro.html')
+    return render(request, 'home.html')
 
 def registro(request):
     return render(request, 'registroauto.html')
+
+def contacto(request):
+    return render(request, 'contacto.html')
 
 def auto_vista_test(request):
     form = VehiculoForm(request.POST or None)
@@ -17,4 +20,11 @@ def auto_vista_test(request):
     context = {
         'form': form
     }
-    return render(request, 'registrotest.html', context)
+    return render(request, 'registro.html', context)
+
+def auto_lista(request):
+    queryset = Vehiculo.objects.all()
+    context = {
+        "object_list": queryset
+    }
+    return render(request, 'lista.html', context)
