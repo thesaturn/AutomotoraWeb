@@ -5,7 +5,9 @@ Sigue estas instrucciones Vergara, LEE TODO
 # 1. Instala estos paquetes de Django:
 
 pip install python-social-auth
+
 pip install social-auth-app-django
+
 pip install django-sslserver
 
 # 2. Al correr el runserver, debes hacerlo con el siguiente comando:
