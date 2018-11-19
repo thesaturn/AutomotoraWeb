@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'app',
     'widget_tweaks',
     'social_django',
-    "sslserver",
+    'sslserver',
+
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'automotora.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -144,3 +145,4 @@ SOCIAL_AUTH_FACEBOOK_SECRET = '49132d88bbb44a76676b55087379eeed'
 LOGIN_URL = 'login'
 LOGOUT_URL = 'logout'
 LOGIN_REDIRECT_URL = 'home'
+LOGOUT_REDIRECT_URL = 'home'
