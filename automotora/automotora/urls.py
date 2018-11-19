@@ -26,6 +26,6 @@ urlpatterns = [
     path('lista/', auto_lista),
     path('contacto/', contacto),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
-    path('login/', login),
+    path('accounts/', include('django.contrib.auth.urls')),
 
 ]

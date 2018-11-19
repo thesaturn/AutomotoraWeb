@@ -11,31 +11,46 @@
     <title>Directorio de Vehículos a la venta</title>
   </head>
   <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="">Navegación</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <a class="navbar-brand" href="">Navegación</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-          aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/home/">Inicio<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/registro/">Registro de Vehículos</a>
-              </li>
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/home/">Inicio<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/registro/">Registro de Vehículos</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="/lista/">Listado de Vehículos</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacto/">Contacto</a>
+          </li>
+        </ul>
+        <div class="navbar-collapse">
+            <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">Listado de Vehículos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/contacto/">Contacto</a>
+                {% block login1 %}
+                {% if user.is_authenticated %}
+                  <font color="white">Bienvenido, {{ user.username }}!</font>
+                  <a href="{% url 'logout' %}">Logout</a>
+                {% else %}
+                  <font color="white">No estás autentificado!</font>
+                  <a href="{% url 'login' %}">Login</a>
+                {% endif %}
+                {% endblock %}
               </li>
             </ul>
-          </div>
-        </nav>
+        </div>
+      </div>
+    </nav>
+</nav>
 
         <br>
         <br>
