@@ -18,6 +18,7 @@ from django.urls import path, include
 from django.conf.urls import url, include
 from app.views import auto_vista_test, auto_lista, contacto, login, home
 from django.contrib.auth import views as auth_views
+from app import views as core_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +28,6 @@ urlpatterns = [
     path('contacto/', contacto),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
     path('accounts/', include('django.contrib.auth.urls')),
+    url(r'^signup/$', core_views.signup, name='signup')
 
 ]

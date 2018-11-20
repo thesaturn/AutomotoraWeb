@@ -22,8 +22,7 @@ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLP
   </head>
 
   <body>
-
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-success">
       <a class="navbar-brand" href="">Navegación</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
       aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,7 +53,7 @@ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLP
                   <a href="{% url 'logout' %}">Logout</a>
                 {% else %}
                   <font color="white">No estás autentificado!</font>
-                  <a href="{% url 'login' %}">Login</a>
+                  <a href="{% url 'login' %}"><font color="white">Login</font></a>
                 {% endif %}
                 {% endblock %}
               </li>
@@ -66,13 +65,13 @@ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLP
     <main role="main">
 
       <!-- Main jumbotron for a primary marketing message or call to action -->
-      <div class="jumbotron">
+      <div class="jumbotron" style="background-color:#9AD58E;">
         <div class="container">
           <h1 class="display-3">Bugueño's Auto Empire</h1>
           <p>Sitio web número 1 en ventas de automoviles usados en Chile.</p>
           <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Aprenda &raquo;
+          <button type="button" class="btn bg-success" data-toggle="modal" data-target="#exampleModal">
+            <font color="white">Aprenda &raquo;</font>
           </button>
           <!-- Modal -->
           <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -94,7 +93,7 @@ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLP
                   Tercero: Si quiere vender su auto, regístrelo para ponerlo en venta.
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-primary" data-dismiss="modal">Entendido!</button>
+                  <button type="button" class="btn bg-success" data-dismiss="modal"><font color="white">Entendido!</font></button>
                 </div>
               </div>
             </div>
@@ -110,7 +109,7 @@ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLP
             <div class="card-body">
               <h5 class="card-title">Registre su Automóvil ahora</h5>
               <p class="card-text">Publique su automóvil de forma sencilla y eficiente.</p>
-              <a href="/registro/" class="btn btn-outline-primary">Registrar</a>
+              <a href="/registro/" class="btn btn-success">Registrar</a>
             </div>
           </div>
           <div class="card">
@@ -119,7 +118,7 @@ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLP
             <div class="card-body">
               <h5 class="card-title">Listado de Automóviles en venta</h5>
               <p class="card-text">Seleccione un automóvil del listado para comenzar el proceso de compra.</p>
-              <a href="/lista/" class="btn btn-outline-primary">Directorio</a>
+              <a href="/lista/" class="btn btn-success">Directorio</a>
             </div>
           </div>
           <div class="card">
@@ -128,7 +127,7 @@ integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLP
             <div class="card-body">
               <h5 class="card-title">Contáctenos</h5>
               <p class="card-text">¿Tiene alguna queja ó sugerencia? Llene el formulario y contáctenos.</p>
-              <a href="/contacto/" class="btn btn-outline-primary">Contacto</a>
+              <a href="/contacto/" class="btn btn-success">Contacto</a>
             </div>
           </div>
         </div>

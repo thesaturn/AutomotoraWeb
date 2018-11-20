@@ -1,4 +1,6 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth import login, authenticate
 from .forms import VehiculoForm
 from .models import Vehiculo
 # Create your views here.
@@ -13,7 +15,7 @@ def contacto(request):
     return render(request, 'contacto.html')
 
 def login(request):
-    return render(request, 'login.html')
+    return render(request, 'registration/login.html')
 
 def auto_vista_test(request):
     form = VehiculoForm(request.POST or None)
@@ -31,3 +33,17 @@ def auto_lista(request):
         "object_list": queryset
     }
     return render(request, 'lista.html', context)
+
+def signup(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            raw_password = form.cleaned_data.get('password1')
+            user = authenticate(username=username, password=raw_password)
+            login(request)
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'registration/signup.html', {'form': form})
